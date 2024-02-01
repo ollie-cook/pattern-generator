@@ -58,7 +58,11 @@ export default function Controls(props: ControlsProps) {
             <button className="relative left-1/2 -translate-x-1/2 w-12 h-12 lg:w-16 lg:h-16" style={{backgroundColor: props.bgColour}} onClick={handleBgClick}></button>
             {
             openBgColourPicker == true && 
-            <div ref={bgColourPickerRef} className="absolute z-10 -translate-x-1/2 left-1/2">
+            <div 
+              ref={bgColourPickerRef} 
+              className="absolute z-10 -translate-x-1/2 left-1/2"
+              onMouseDown={(event) => event.preventDefault()}
+            >
               <ChromePicker 
                 color={props.bgColour}
                 onChange={(newColor) => props.setBgColour(newColor.hex)}
