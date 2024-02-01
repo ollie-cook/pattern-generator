@@ -2,6 +2,8 @@ interface SVGFrameProps {
   height: number;
   shapeAmount: number;
   shapeHeight: number;
+  bgColour: string;
+  shapeColour: string;
 }
 
 export default function SVGFrame(props: SVGFrameProps) {
@@ -15,12 +17,12 @@ export default function SVGFrame(props: SVGFrameProps) {
 
   return (
     <svg viewBox={`0 0 100 ${props.height}`}>
-      <rect x="0" y="0" width="100" height={props.height} fill="#4ade80"/>
+      <rect x="0" y="0" width="100" height={props.height} fill={props.bgColour}/>
       {
         Array(props.shapeAmount).fill(0).map((_, i) => {
           let x = coords[i][0];
           let y = coords[i][1];
-          return <rect key={i} x={x} y={y} width={props.shapeHeight} height={props.shapeHeight}/>
+          return <rect key={i} x={x} y={y} width={props.shapeHeight} height={props.shapeHeight} fill={props.shapeColour}/>
         })
       }
     </svg>
