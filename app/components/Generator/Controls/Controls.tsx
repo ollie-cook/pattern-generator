@@ -61,7 +61,6 @@ export default function Controls(props: ControlsProps) {
             <div 
               ref={bgColourPickerRef} 
               className="absolute z-10 -translate-x-1/2 left-1/2"
-              onTouchMove={(event) => event.preventDefault()}
             >
               <ChromePicker 
                 color={props.bgColour}
