@@ -18,8 +18,8 @@ export default function Controls(props: ControlsProps) {
   const [openBgColourPicker, setOpenBgColourPicker] = useState(false);
   const [openShapeColourPicker, setOpenShapeColourPicker] = useState(false);
 
-  const bgColourPickerRef = useRef(null);
-  const shapeColourPickerRef = useRef(null);
+  const bgColourPickerRef = useRef<HTMLDivElement>(null);
+  const shapeColourPickerRef = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (event: any) => {
     if (bgColourPickerRef.current != null && !bgColourPickerRef.current.contains(event.target)) {
