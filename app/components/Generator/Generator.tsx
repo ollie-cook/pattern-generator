@@ -31,7 +31,7 @@ export default function Generator() {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center w-11/12 lg:w-auto">
+    <div className="min-h-[100svh] flex flex-col justify-center items-center w-11/12 lg:w-auto">
       <Controls 
         setShapeAmount={(value: number) => setShapeAmount(value)} 
         setShapeSize={(value: number) => setShapeSize(value)}
