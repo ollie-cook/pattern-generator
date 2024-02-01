@@ -19,7 +19,7 @@ export default function Controls(props: ControlsProps) {
   const [openShapeColourPicker, setOpenShapeColourPicker] = useState(false);
 
   return (
-    <div className="w-full flex ">
+    <div className="w-full flex justify-between">
       <div className="p-2 flex flex-col items-start w-fit">
         <label htmlFor="amount-slider">Shape amount</label>
         <Slider id="amount-slider" defaultValue={[4]} max={10} step={1} className="w-64 mt-1" onValueChange={(newValue) => props.setShapeAmount(newValue[0])} />

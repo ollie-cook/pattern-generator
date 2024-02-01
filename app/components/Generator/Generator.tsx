@@ -9,6 +9,7 @@ export default function Generator() {
   const [shapeSize, setShapeSize] = useState(10);
   const [bgColour, setBgColour] = useState('#53C18A');
   const [shapeColour, setShapeColour] = useState('#194D33');
+  const [refresh, setRefresh] = useState(0);
 
   const svgRef = useRef(null);
 
@@ -40,14 +41,30 @@ export default function Generator() {
         setShapeColour={(value: string) => setShapeColour(value)}
       />
       <div className="w-[50rem] aspect-[16/9] border border-black">
-        <SVGFrame ref={svgRef} height={height} shapeAmount={shapeAmount} shapeHeight={shapeSize} bgColour={bgColour} shapeColour={shapeColour} />
+        <SVGFrame 
+          ref={svgRef} 
+          height={height} 
+          shapeAmount={shapeAmount} 
+          shapeHeight={shapeSize} 
+          bgColour={bgColour} 
+          shapeColour={shapeColour} 
+          refresh={refresh}
+        />
       </div>
-      <button 
-        className="p-2 bg-blue-500 text-white font-bold rounded-md mt-2 hover:bg-blue-600"
-        onClick = {exportSVG}
-      >
-        Export
-      </button>
+      <div className="w-full flex  mt-2 justify-between">
+        <button
+          className="p-2 bg-green-500 text-white font-bold rounded-md  hover:bg-green-600"
+          onClick = {() => setRefresh(prev => prev+1)}
+        >
+          Shuffle
+        </button>
+        <button 
+          className="p-2 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600"
+          onClick = {exportSVG}
+        >
+          Export
+        </button>
+      </div>   
     </div>
   )
 }
