@@ -31,7 +31,7 @@ export default function Generator() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center">
+    <div className="min-h-screen flex flex-col justify-center items-center w-11/12 lg:w-auto">
       <Controls 
         setShapeAmount={(value: number) => setShapeAmount(value)} 
         setShapeSize={(value: number) => setShapeSize(value)}
@@ -40,7 +40,7 @@ export default function Generator() {
         shapeColour={shapeColour}
         setShapeColour={(value: string) => setShapeColour(value)}
       />
-      <div className="w-[50rem] aspect-[16/9] border border-black">
+      <div className="w-full lg:w-[50rem] aspect-[16/9] border border-black">
         <SVGFrame 
           ref={svgRef} 
           height={height} 
