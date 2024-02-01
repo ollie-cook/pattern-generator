@@ -48,6 +48,8 @@ const SVGFrame = forwardRef<SVGSVGElement, SVGFrameProps>((props, ref) => {
   )
 });
 
+SVGFrame.displayName = 'SVGFrame';
+
 export default SVGFrame;
 
 /*
